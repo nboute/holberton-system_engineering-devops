@@ -1,3 +1,2 @@
 #!/bin/bash
-sort | tr -s '[:blank:]' ',' | cut -d, -f1 | uniq -c | sort -rn | head -n 11 | rev | cut -d ' ' -f1 | rev
-
+sort | tr -s '\t' ' ' | cut -d ' ' -f1 | uniq -c | sort -rn | head -n 11 | rev | cut -d ' ' -f1 | rev
