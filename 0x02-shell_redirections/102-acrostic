@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -c1 acrostic.txt | tr -d '\n' | xargs echo
+cut -c1 acrostic.txt | tr -d '\n' | sort
