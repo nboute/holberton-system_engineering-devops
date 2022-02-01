@@ -1,0 +1,2 @@
+#!/bin/bash
+LC_NUMERIC=C printf "%.2f\n" $NUM
