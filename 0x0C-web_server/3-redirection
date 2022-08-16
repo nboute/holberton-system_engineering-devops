@@ -2,8 +2,8 @@
 # This script installs nginx on a server and sets up a 301 redirection
 sudo apt update
 sudo apt -y install nginx
+echo "Hello World" > /var/www/html/index.nginx-debian.html
 
 sed -i '/server_name _;/a \n \n\tlocation /redirect_me {\n\trewrite ^ https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1 permanent;\n\t}' /etc/nginx/sites-available/default
 
-echo "Hello World" > /var/www/html/index.nginx-debian.html
 sudo service nginx restart
