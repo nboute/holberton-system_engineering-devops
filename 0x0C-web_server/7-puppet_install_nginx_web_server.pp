@@ -5,7 +5,7 @@ package {'nginx':
 
 file {'/var/www/html/index.nginx-debian.html':
   ensure => 'present',
-  content => 'Hello world\n',
+  content => 'Hello World\n',
 }
 
 file_line { 'add redirect 301':
