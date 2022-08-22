@@ -3,5 +3,6 @@
 apt -y update
 apt -y install haproxy
 
-sed -i '$a frontend firstbalance\n\tbind *:80\n\toption forwardfor\n\tdefault_backend webservers' /etc/haproxy/haproxy.cfg
-sed -i '$a backend webservers\n\tbalance roundrobin\n\tserver web1 54.167.41.249:80 check\n\tserver web2 54.160.234.222:80 check\n\toption httpchk' /etc/haproxy/haproxy.cfg
+sed -i '$a frontend http\n\tbind *:80\n\tmode http\n\tdefault_backend webservers' /etc/haproxy/haproxy.cfg
+sed -i '$a backend webservers\n\tbalance roundrobin\n\tserver web1 54.167.41.249:80 check\n\tserver web2 54.160.234.222:80 check' /etc/haproxy/haproxy.cfg
+service haproxy restart
