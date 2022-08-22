@@ -7,7 +7,7 @@ exec {'update':
 package {'nginx':
   ensure  => 'present',
   name    => 'nginx',
-  require => Exec['apt update']
+  require => Exec['update']
 }
 
 file_line { 'add custom header':
