@@ -1,12 +1,13 @@
 # Puppet script to configure a web server
 
 exec { 'apt update'
-  command => 'apt update',
+  command => 'apt-get update',
   path    => '/usr/bin/',
 }
 
 package {'nginx':
   ensure  => 'present',
+  require => exec['apt update']
 }
 
 file_line { 'add custom header':
