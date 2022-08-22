@@ -1,10 +1,12 @@
 # Puppet script to configure a web server
 
-include apt
+exec { 'apt update'
+  command => 'apt update',
+  path    => '/usr/bin/',
+}
 
 package {'nginx':
   ensure  => 'present',
-  require => Class['apt::update']
 }
 
 file_line { 'add custom header':
