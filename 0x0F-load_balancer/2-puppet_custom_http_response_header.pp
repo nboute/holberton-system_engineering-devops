@@ -1,12 +1,12 @@
 # Puppet script to configure a web server
 
-exec {'apt update':
-  command => 'apt-get update',
-  path    => '/usr/bin/',
+exec {'update':
+  command => '/usr/bin/apt-get update',
 }
 
 package {'nginx':
   ensure  => 'present',
+  name    => 'nginx',
   require => Exec['apt update']
 }
 
