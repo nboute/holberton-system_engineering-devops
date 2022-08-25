@@ -5,7 +5,7 @@ my_function () {
 	dig "$2"."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{ printf "%s record and points to %s\n", $4, $5 }'
 }
 
-if [ $# -lt 2 ]
+if [ $# -ne 2 ]
 	then
 		for SUB in 'www' 'lb-01' 'web-01' 'web-02' ; do
 			my_function "$1" "$SUB"
