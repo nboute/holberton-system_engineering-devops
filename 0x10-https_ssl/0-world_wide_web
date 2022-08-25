@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+my_function () {
+	echo -n "The subdomain $2 is a "
+	dig "$2"."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{ printf "%s record and points to %s\n", $4, $5 }'
+}
+
+if [ $# -lt 3 ]
+	then
+		for SUB in 'www' 'lb-01' 'web-01' 'web-02' ; do
+			my_function "$1" "$SUB"
+		done
+	else
+		my_function "$1" "$2"
+fi
