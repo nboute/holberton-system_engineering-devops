@@ -7,9 +7,9 @@ my_function () {
 }
 
 if [ $# -ne 2 ]; then
-	for SUB in 'www' 'lb-01' 'web-01' 'web-02' ; do
-			my_function "$1" "$SUB"
+	for sub in 'www' 'lb-01' 'web-01' 'web-02' ; do
+		my_function $1 $sub
 	done
 else
-		my_function "$1" "$2"
+		my_function $1 $2
 fi
