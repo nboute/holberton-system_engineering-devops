@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Extract sql databases into a single archive
+export MYSQL_PWD=$1
+mysqldump -uroot -p --all-databases --single-transaction --triggers --routines > backup.sql
+name=$(date '+%d-%m-%Y')
+echo "$name.tar.gz"
+tar -czf "$name.tar.gz" backup.sql
