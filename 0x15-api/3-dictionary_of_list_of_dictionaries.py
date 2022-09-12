@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This module scraps REST API from a website and exports it to json"""
-import requests
 import json
+import requests
 
 
 if __name__ == "__main__":

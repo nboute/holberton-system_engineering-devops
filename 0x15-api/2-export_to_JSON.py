@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """This module scraps REST API from a website and exports it to json"""
+import json
 import requests
 from sys import argv
-import json
 
 
 if __name__ == "__main__":
