@@ -21,4 +21,4 @@ if __name__ == "__main__":
             task_list.append(task.get('title'))
     print('({}/{}):'.format(nb_tasks_completed, nb_tasks))
     for task in task_list:
-        print("\t" + task)
+        print("\t " + task)
