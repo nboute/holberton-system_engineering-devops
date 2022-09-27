@@ -28,7 +28,7 @@ def count_words(subreddit, word_list, after=None, session=None,
         title = post.get('data').get('title')
         for keyword in word_list:
             for word in title.casefold().split():
-                if keyword.casefold() in word:
+                if keyword.casefold() == word:
                     count_dict[keyword] += 1
     if (after is None):
         dupeless_dict = {}
