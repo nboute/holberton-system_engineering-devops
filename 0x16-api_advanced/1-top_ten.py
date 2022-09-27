@@ -12,11 +12,10 @@ def top_ten(subreddit):
     }
     session.headers.update(headers)
     response = session.get(url, allow_redirects=False)
-    if (response.ok is False):
+    if (response.ok is False or response.status_code == 302):
         print('None')
         return
     top_posts = response.json().get('data').get('children')
     titles_list = []
     for post in top_posts:
-        titles_list.append(post.get('data').get('title'))
-    print('\n'.join(titles_list))
+        print(post.get('data').get('title'))
