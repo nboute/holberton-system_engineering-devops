@@ -5,7 +5,7 @@ import requests
 
 def top_ten(subreddit):
     """Get top ten titles of posts from a subreddit"""
-    url = 'https://www.reddit.com/r/' + subreddit + '/top.json?limit=10'
+    url = 'https://www.reddit.com/r/' + subreddit + '/hot.json?limit=10'
     session = requests.Session()
     headers = {
         'User-Agent': 'My User Agent 1.0'
