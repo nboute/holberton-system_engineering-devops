@@ -5,9 +5,9 @@ import requests
 
 def recurse(subreddit, hot_list=[], after=None, session=None):
     """Get all hot posts from a subreddit"""
-    url = 'https://www.reddit.com/r/' + subreddit + '/hot.json?t=all'
+    url = 'https://www.reddit.com/r/' + subreddit + '/hot.json'
     if after is not None:
-        url += '&after=' + after
+        url += '?after=' + after
     if (session is None):
         session = requests.Session()
         headers = {
