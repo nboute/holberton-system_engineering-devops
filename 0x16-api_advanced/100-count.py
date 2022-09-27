@@ -22,7 +22,6 @@ def count_words(subreddit, word_list, after=None, session=None,
     response = session.get(url, allow_redirects=False)
     if (response.ok is False or response.status_code == 302):
         return
-    print(response.status_code)
     after = response.json().get('data').get('after')
     top_posts = response.json().get('data').get('children')
     for post in top_posts:
