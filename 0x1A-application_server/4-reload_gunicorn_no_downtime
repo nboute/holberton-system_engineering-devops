@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Restart all gunicorn workers gracefully
-kill -HUP "$(pgrep gunicorn | head -1)"
+kill -HUP "$(cat /var/run/gunicorn/gunicorn.pid | head -1)"
+systemctl daemon-reload
